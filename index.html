@@ -58,11 +58,12 @@
     ></script>
     <script>
       const tooltip = () => {
-        $('[data-toggle="tooltip"]').tooltip();
+        debugger;
+
+        $('[data-toggle="tooltip"]').tooltip({
+          trigger: "hover"
+        });
       };
-      //   $(function() {
-      //     $('[data-toggle="tooltip"]').tooltip();
-      //   });
     </script>
     <script>
       const reducer = Redux.combineReducers({
@@ -72,6 +73,8 @@
             newState.push(action.item);
           }
           if (action.type === "remove") {
+            debugger;
+            $(".li").tooltip("hide");
             newState.splice(action.index, 1);
           }
           return newState;
@@ -99,6 +102,7 @@
               index: index
             });
             render();
+            $(tooltip());
           };
         });
         document.getElementById("todo").value = "";
