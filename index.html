@@ -106,7 +106,6 @@
 
       document.getElementById("submit-todo").onsubmit = e => {
         e.preventDefault();
-        debugger;
         store.dispatch({
           type: "add",
           item: document.getElementById("todo").value
